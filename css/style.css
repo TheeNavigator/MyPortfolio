@@ -1,0 +1,575 @@
+:root {
+  --bg-color: #081b29;
+  --second-background: rgba(17, 46, 66, 0.09);
+  --text-color: #ededed;
+  --main-color: #00abf0;
+  --sidebar-width: 270px;
+}
+
+.bg-base {
+  background-color: var(--second-background);
+}
+
+.item {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.rise {
+  transform: translateY(-100%);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Yu Gothic UI";
+  scroll-behavior: smooth;
+}
+
+h2 span {
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+span span {
+  color: var(--main-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.4s ease;
+}
+
+img {
+  width: 100%;
+}
+
+.full-height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/*navigation-bar start*/
+.navbar {
+  background: var(--bs-secondary);
+}
+
+.navbar-brand span {
+  text-shadow: 2px 2px var(--bg-color);
+}
+
+.navbar-brand span span {
+  text-shadow: 2px 2px var(--bg-color);
+}
+
+
+.navbar .nav-item .nav-link:hover {
+  color: var(--main-color);
+}
+
+.collapse .nav-item .nav-link {
+  font-weight: bold;
+  color: black;
+}
+
+/*home styling*/
+.text-brand {
+  color: white;
+}
+
+.change h2 {
+  text-shadow: 1px 2px var(--text-color);
+}
+
+.btn-box {
+  width: 265px;
+  height: 29px;
+
+  box-shadow: 5px 5px 10px var(--main-color);
+  border-radius: 30px;
+}
+
+.btn-box a {
+  margin-left: 30px;
+}
+
+.btn-box:hover {
+  transition: 0.7s ease-out;
+  box-shadow: 5px 5px 10px var(--text-color);
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 30px;
+}
+/*home styling end*/
+
+/*about-section styling start*/
+.about-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: 0.5s ease;
+}
+
+.about-img .image-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    border-top: 0.2rem solid var(--second-background);
+    border-bottom: 0.2rem solid var(--second-background);
+    border-left: 0.2rem solid var(--main-color);
+    border-right: 0.2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
+}
+
+.about-img:hover {
+  transform: scale(0.9);
+}
+
+.about-img img {
+  width: 90%;
+  border-radius: 50%;
+  border: 0.2rem solid var(--main-color);
+}
+
+/*about styling end*/
+
+/*service-section styling start*/
+.iconbox {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: var(--main-color);
+}
+
+.service {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.service:hover {
+  transform: scale(1.1);
+}
+
+.service:hover h6 {
+  text-shadow: 1px 1px var(--main-color);
+  transition: 1s ease-in-out;
+  color: white;
+}
+
+.service:hover .iconbox {
+  transition: 0.8s ease;
+  background-color: var(--bg-color);
+}
+
+.service p {
+  font-family: Century;
+  font-size: 12px;
+}
+
+.link-custom {
+  font-weight: 900;
+  position: relative;
+  cursor: pointer;
+  font-family: "Bradley Hand ITC";
+}
+
+.link-custom::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: all 1s;
+}
+
+.link-custom:hover::after {
+  width: 100%;
+}
+
+.shadow-effect {
+  box-shadow: 0 6px 6px 0 var(--text-color);
+  transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+  box-shadow: 0 6px 6px 0 var(--main-color);
+}
+/*service styling end*/
+
+/*Education styling start*/
+.education-content {
+  position: relative;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.education-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+.education-content .content {
+  position: relative;
+  padding: 5.5px;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.education-content .content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--second-background);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.education-content .content:hover::before {
+  width: 100%;
+}
+
+.education-content .content .year {
+  font-size: 15px;
+  color: var(--main-color);
+  padding-bottom: 10px;
+}
+
+.education-content .content i {
+  padding-right: 12px;
+  color: var(--text-color);
+}
+
+.education-content .content p {
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.carousel-item i {
+  font-size: 150px;
+  padding: 50px;
+}
+.carousel-item h5 {
+  padding-bottom: 145px;
+}
+
+.carousel-inner .carousel-item .carousel-caption h5 {
+  padding-top: 50px;
+}
+/*Education styling end*/
+
+/*project-section styling start*/
+.card-custom {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  transition: 1s;
+}
+
+.card-custom:hover {
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  box-shadow: 5px 5px 10px white;
+}
+
+.card-custom img {
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.card-custom:hover img {
+  cursor: pointer;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  transform: scale(1.2);
+}
+
+.project-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+}
+
+.card-custom:hover .project-layer {
+  transform: translateY(0);
+}
+
+.project-layer h4 {
+  font-size: 20px;
+}
+
+.project-layer p {
+  font-size: 10px;
+  margin: 0.3rem 0 1rem;
+}
+
+.project-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background: var(--text-color);
+  border-radius: 50%;
+}
+
+.project-layer a i {
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+/*project styling end*/
+
+/*contact styling start*/
+#contact .form-control {
+  background-color: var(--second-background);
+  border-color: var(--main-color);
+  color: var(--text-color);
+}
+
+#contact .form-control:focus {
+  border-color: var(--bg-color);
+  box-shadow: none;
+}
+
+#contact input.form-control {
+  height: 44px;
+}
+
+form textarea {
+  resize: none;
+}
+
+.contact-btn button {
+  border: none;
+  color: grey;
+  background-color: transparent;
+  padding-top: 30px;
+  transition: 1s ease-in-out;
+}
+
+.contact-btn button:hover {
+  border-radius: 10px;
+  border-bottom: 2px solid var(--main-color);
+  color: white;
+}
+
+form .message-sent {
+  position: absolute;
+  padding: 2px;
+  text-align: left;
+  font-size: 20px;
+}
+/*contact styling end*/
+
+/*Footer styling start*/
+
+.copyright a {
+  font-size: 20px;
+}
+
+.copyright span:hover {
+  color: white;
+}
+.social-icons {
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: var(--main-color);
+}
+/*Footer styling end*/
+
+/*arrow up styling*/
+html {
+  scroll-behavior: smooth;
+}
+
+.arrow {
+  color: var(--main-color);
+  font-size: 15px;
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  background: var(--second-background);
+  border: 2px solid var(--second-background);
+  text-align: center;
+  display: none;
+  box-shadow: 0 6px 6px 0 var(--text-color);
+}
+
+.arrow:hover {
+  color: white;
+  transition: 0.7s ease;
+  box-shadow: 0 6px 6px 0 var(--main-color);
+}
+
+.arrow.active {
+  display: block; /* Show the arrow when it becomes active */
+}
+
+@media (min-width: 992px) {
+
+    .about-img{
+        margin-right: 59px;
+        justify-content: center;
+        align-items: center;
+    }
+  .navbar {
+    min-height: 100vh;
+    width: var(--sidebar-width);
+      background-size: cover;
+      background: linear-gradient(rgba(17, 46, 66, 0.8), rgba(17, 46, 66, 0.8)),url("../images/sidebar2.jpg") center;
+  }
+
+  #content-wrapper {
+    padding-left: var(--sidebar-width);
+  }
+}
+
+@media (min-width: 310px) {
+
+  .card-custom {
+    position: relative;
+    display: flex;
+  }
+
+  .card-custom img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .project-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+  }
+
+  .project-layer h4 {
+    font-size: 20px;
+  }
+
+  .project-layer p {
+    font-size: 10px;
+    margin: 0.3rem 0 1rem;
+  }
+
+  .project-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: var(--text-color);
+    border-radius: 50%;
+  }
+
+  .project-layer a i {
+    font-size: 15px;
+    color: var(--text-color);
+  }
+
+  form .btn {
+    height: 20px;
+    padding-top: 40px;
+  }
+
+  .copyright a {
+    font-size: 15px;
+    color: var(--main-color);
+  }
+
+  .social-icons a {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+
+  .arrow {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* Animation reload and scroll */
+
+/*animations*/
+@keyframes aboutSpinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
